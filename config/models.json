@@ -1,0 +1,19 @@
+{
+  "_comment": "EMPTY TEMPLATE. Fill models[] from each provider's pricing page; do not copy prices from memory. Seeded into the `models` table. Prices are per 1,000,000 tokens in USD.",
+  "price_currency": "USD",
+  "models": [
+    {
+      "_example_only_delete_me": true,
+      "slug": "",
+      "provider": "",
+      "display_name": "",
+      "tier": "budget | balanced | premium",
+      "input_price_per_m": null,
+      "output_price_per_m": null,
+      "context_window": null,
+      "source_url": "",
+      "last_updated": "YYYY-MM-DD",
+      "active": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "_comment": "Default weights, percentage points, must sum to 100. Sector files may add deltas; code renormalizes to 100.",
+  "factors": {
+    "time_saved": {
+      "weight": 30,
+      "definition": "Monthly volume x minutes per task. More hours saved = higher score."
+    },
+    "volume_repetitiveness": {
+      "weight": 25,
+      "definition": "How often the task happens and how similar each occurrence is."
+    },
+    "error_risk_inverse": {
+      "weight": 20,
+      "definition": "Inverse of the damage if AI gets it wrong. Low impact = high score (safer to automate)."
+    },
+    "ease_of_implementation": {
+      "weight": 25,
+      "definition": "Data availability and integration effort. Digital data and common tools = high score."
+    }
+  },
+  "score_scale": { "min": 1, "max": 5 }
+}

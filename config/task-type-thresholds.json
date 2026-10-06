@@ -1,0 +1,11 @@
+{
+  "_comment": "PLACEHOLDER values. A model is eligible for a task type only if its benchmark quality (0-1) meets this minimum. Tune after the Phase 5 benchmark; record the reasoning in DECISIONS.md.",
+  "quality_scale": "0.0 to 1.0 (exact match/F1 for classification and extraction; normalized judge score for the rest)",
+  "thresholds": {
+    "classification": 0.85,
+    "extraction": 0.85,
+    "summarization": 0.75,
+    "drafting": 0.75,
+    "reasoning": 0.8
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "retail-ecommerce",
+  "name": "Retail and e-commerce",
+  "description": "Shops, online stores and marketplaces.",
+  "typical_workflows": [
+    { "name": "Customer support", "description": "Answer order, delivery, return and product questions by email, chat or social.", "likely_task_types": ["classification", "drafting"] },
+    { "name": "Product listings", "description": "Write product titles, descriptions and tags from supplier data.", "likely_task_types": ["drafting", "extraction"] },
+    { "name": "Review and feedback analysis", "description": "Summarize customer reviews and spot recurring complaints.", "likely_task_types": ["summarization", "classification"] },
+    { "name": "Inventory and reordering", "description": "Decide what to restock and when.", "likely_task_types": ["reasoning", "other"] },
+    { "name": "Returns and refunds handling", "description": "Check return requests against policy and process them.", "likely_task_types": ["classification", "extraction"] }
+  ],
+  "common_tools": ["Shopify", "WooCommerce", "Amazon Seller Central", "Zendesk", "Gorgias", "Excel / Google Sheets", "Mailchimp", "Stripe"],
+  "sensitive_data_categories": ["personal", "financial"],
+  "compliance_notes": [
+    "Customer names, addresses and order history are personal data; privacy laws such as GDPR may apply if you sell to people in the EU.",
+    "Do not send full card numbers to any AI service; payment data should stay within your payment provider.",
+    "Product claims written by AI should be checked so they are accurate."
+  ],
+  "follow_up_questions": [
+    "How many customer messages and orders do you handle per month?",
+    "What share of customer questions are repeats (where is my order, return policy)?",
+    "Which platform runs your store and your inbox?",
+    "Do you sell in the EU or UK?"
+  ],
+  "weight_adjustments": { "volume_repetitiveness": 5, "time_saved": -5 }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "education",
+  "name": "Education",
+  "description": "Schools, colleges, training providers and tutoring businesses.",
+  "typical_workflows": [
+    { "name": "Marking and feedback", "description": "Grade assignments and write feedback comments.", "likely_task_types": ["classification", "drafting", "reasoning"] },
+    { "name": "Lesson and course material creation", "description": "Draft lesson plans, quizzes and handouts.", "likely_task_types": ["drafting"] },
+    { "name": "Student enquiries and admissions", "description": "Answer applicant and student questions, process applications.", "likely_task_types": ["classification", "drafting", "extraction"] },
+    { "name": "Student progress reports", "description": "Summarize a student's performance for parents or staff.", "likely_task_types": ["summarization", "drafting"] },
+    { "name": "Timetabling and administration", "description": "Schedule classes and rooms, track attendance.", "likely_task_types": ["reasoning", "other"] }
+  ],
+  "common_tools": ["Google Classroom", "Moodle", "Canvas", "Microsoft Teams", "Excel / Google Sheets", "Student information system"],
+  "sensitive_data_categories": ["personal"],
+  "compliance_notes": [
+    "Student records are personal data and often concern minors; rules such as FERPA (US), COPPA, or GDPR may apply.",
+    "Grades that affect a student's future should be reviewed by a teacher; explain how AI was used.",
+    "Check your institution's policy on AI use and academic integrity."
+  ],
+  "follow_up_questions": [
+    "Are the students minors?",
+    "How many students or assignments per term?",
+    "Which learning platform do you use?",
+    "Will a teacher review AI output before students see it?"
+  ],
+  "weight_adjustments": { "error_risk_inverse": 5, "ease_of_implementation": -5 }
+}

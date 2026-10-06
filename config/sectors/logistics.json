@@ -1,0 +1,26 @@
+{
+  "id": "logistics",
+  "name": "Logistics and transport",
+  "description": "Freight, delivery, warehousing and supply-chain operators.",
+  "typical_workflows": [
+    { "name": "Shipping document processing", "description": "Read bills of lading, customs forms and delivery notes.", "likely_task_types": ["extraction", "classification"] },
+    { "name": "Customer shipment enquiries", "description": "Answer where-is-my-shipment and delay questions.", "likely_task_types": ["classification", "drafting"] },
+    { "name": "Route and load planning", "description": "Assign loads and routes to vehicles.", "likely_task_types": ["reasoning", "other"] },
+    { "name": "Exception handling", "description": "Handle delays, damage claims and missed deliveries.", "likely_task_types": ["classification", "drafting", "reasoning"] },
+    { "name": "Carrier and rate quotes", "description": "Collect and compare quotes from carriers.", "likely_task_types": ["extraction", "reasoning"] }
+  ],
+  "common_tools": ["TMS (transport management system)", "WMS (warehouse management system)", "Excel", "Email", "EDI", "Tracking portals"],
+  "sensitive_data_categories": ["personal", "financial"],
+  "compliance_notes": [
+    "Delivery addresses and recipient names are personal data.",
+    "Customs and cargo documents may be legally binding; a person should confirm key fields.",
+    "Rates and customer contracts are commercially sensitive."
+  ],
+  "follow_up_questions": [
+    "How many shipments or documents per month?",
+    "Are documents emailed PDFs, scans, EDI messages or system records?",
+    "Does your transport system already provide tracking and routing optimization?",
+    "Which regions or customs regimes do you operate in?"
+  ],
+  "weight_adjustments": { "volume_repetitiveness": 5, "time_saved": 5, "error_risk_inverse": -5, "ease_of_implementation": -5 }
+}

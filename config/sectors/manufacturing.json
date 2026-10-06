@@ -1,0 +1,26 @@
+{
+  "id": "manufacturing",
+  "name": "Manufacturing",
+  "description": "Factories, workshops and industrial suppliers.",
+  "typical_workflows": [
+    { "name": "Quality inspection reports", "description": "Record and summarize inspection results and defects.", "likely_task_types": ["extraction", "summarization"] },
+    { "name": "Maintenance logs and work orders", "description": "Turn technician notes into structured work orders and spot repeat failures.", "likely_task_types": ["extraction", "classification"] },
+    { "name": "Production planning", "description": "Schedule jobs around machines, materials and deadlines.", "likely_task_types": ["reasoning", "other"] },
+    { "name": "Supplier communication", "description": "Chase orders, confirm deliveries, handle quotes.", "likely_task_types": ["drafting", "extraction"] },
+    { "name": "Safety and compliance reporting", "description": "Prepare incident reports and audit documentation.", "likely_task_types": ["summarization", "drafting"] }
+  ],
+  "common_tools": ["ERP (SAP, Oracle, Odoo)", "MES", "Excel", "CMMS (maintenance software)", "Email", "Paper forms"],
+  "sensitive_data_categories": ["personal"],
+  "compliance_notes": [
+    "Product designs, formulas and supplier prices are trade secrets; check what leaves your network.",
+    "Safety-critical decisions must keep a qualified person in charge.",
+    "Employee incident reports contain personal data."
+  ],
+  "follow_up_questions": [
+    "Is the data digital (system records, spreadsheets) or on paper or handwritten notes?",
+    "Does the task need live machine or sensor data, or just documents and text?",
+    "How many reports, work orders or orders per month?",
+    "Would a fixed rule or an ERP setting already do this?"
+  ],
+  "weight_adjustments": { "ease_of_implementation": -5, "volume_repetitiveness": 5 }
+}

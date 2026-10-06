@@ -1,0 +1,26 @@
+{
+  "id": "it-services",
+  "name": "IT services and internal IT teams",
+  "description": "Software/IT companies and internal IT departments evaluating AI for their own workflows.",
+  "typical_workflows": [
+    { "name": "Support ticket triage", "description": "Read incoming tickets, categorize, set priority, route to a team.", "likely_task_types": ["classification", "extraction"] },
+    { "name": "Code review", "description": "Review pull requests for bugs, style and security issues.", "likely_task_types": ["reasoning", "drafting"] },
+    { "name": "Documentation", "description": "Write and update technical docs, runbooks and release notes.", "likely_task_types": ["drafting", "summarization"] },
+    { "name": "Incident summaries", "description": "Turn alerts, chat logs and timelines into post-incident reports.", "likely_task_types": ["summarization", "extraction"] },
+    { "name": "RFP and proposal responses", "description": "Answer questionnaires and draft proposals using past answers.", "likely_task_types": ["drafting", "extraction"] }
+  ],
+  "common_tools": ["Jira", "ServiceNow", "Zendesk", "GitHub", "GitLab", "Confluence", "Slack", "PagerDuty"],
+  "sensitive_data_categories": ["personal"],
+  "compliance_notes": [
+    "Source code and customer tickets may contain secrets, credentials or customer personal data; check what is sent to an outside AI provider.",
+    "Client contracts may forbid sharing their data or code with third-party AI services.",
+    "RFP answers may contain confidential pricing or client names."
+  ],
+  "follow_up_questions": [
+    "Roughly how many tickets, pull requests or documents do you handle per month?",
+    "Do tickets or code contain customer data or credentials?",
+    "Which ticketing and code tools do you use, and do they have an API?",
+    "Do you already have a library of past answers or documentation to draw on?"
+  ],
+  "weight_adjustments": { "ease_of_implementation": 5, "error_risk_inverse": -5 }
+}

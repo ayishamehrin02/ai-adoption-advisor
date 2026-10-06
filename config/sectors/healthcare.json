@@ -1,0 +1,27 @@
+{
+  "id": "healthcare",
+  "name": "Healthcare",
+  "description": "Clinics, hospitals, dental practices, labs and health-service providers.",
+  "typical_workflows": [
+    { "name": "Appointment scheduling and reminders", "description": "Book, move and remind patients about appointments.", "likely_task_types": ["extraction", "classification"] },
+    { "name": "Clinical documentation", "description": "Write visit notes and summaries from consultations.", "likely_task_types": ["summarization", "drafting"] },
+    { "name": "Medical coding and billing", "description": "Assign billing codes and prepare insurance claims.", "likely_task_types": ["classification", "extraction"] },
+    { "name": "Patient enquiries", "description": "Answer questions about opening hours, preparation and results process.", "likely_task_types": ["classification", "drafting"] },
+    { "name": "Referral and records handling", "description": "Read referral letters and file them in the right record.", "likely_task_types": ["extraction", "classification"] }
+  ],
+  "common_tools": ["Electronic health record (EHR) system", "Practice management software", "Email / fax", "Excel", "Insurance portals"],
+  "sensitive_data_categories": ["health", "personal", "financial"],
+  "compliance_notes": [
+    "Health information is highly sensitive and tightly regulated (for example HIPAA in the US, GDPR special-category data in the EU). Confirm legal requirements with your compliance lead before sending any patient data to an AI service.",
+    "Prefer providers that sign a data processing or business associate agreement, and do not use patient data for model training.",
+    "AI must not make clinical decisions on its own; keep a qualified person in the loop for anything affecting care.",
+    "Consider removing names and identifiers before processing where possible."
+  ],
+  "follow_up_questions": [
+    "Does this task involve patient names, diagnoses or other health records?",
+    "Which country or region are you in (this decides which privacy laws apply)?",
+    "Does a clinician review the result before it is used?",
+    "Which record or practice management system holds the data, and can it export or connect?"
+  ],
+  "weight_adjustments": { "error_risk_inverse": 10, "time_saved": -5, "ease_of_implementation": -5 }
+}

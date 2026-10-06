@@ -1,0 +1,26 @@
+{
+  "id": "hospitality",
+  "name": "Hospitality",
+  "description": "Hotels, restaurants, cafes, event venues and travel businesses.",
+  "typical_workflows": [
+    { "name": "Booking and reservation enquiries", "description": "Answer availability, price and policy questions and confirm bookings.", "likely_task_types": ["classification", "drafting", "extraction"] },
+    { "name": "Guest review responses", "description": "Read reviews and write replies.", "likely_task_types": ["summarization", "drafting"] },
+    { "name": "Staff rostering", "description": "Plan shifts around demand and availability.", "likely_task_types": ["reasoning", "other"] },
+    { "name": "Menu, stock and ordering", "description": "Forecast demand and order supplies.", "likely_task_types": ["reasoning", "other"] },
+    { "name": "Marketing content", "description": "Write social posts, newsletters and listings.", "likely_task_types": ["drafting"] }
+  ],
+  "common_tools": ["Property management system (PMS)", "Booking.com / Airbnb / Expedia", "OpenTable", "POS system", "Excel", "Instagram / Facebook", "WhatsApp"],
+  "sensitive_data_categories": ["personal", "financial"],
+  "compliance_notes": [
+    "Guest names, contact details, passport data and payment info are personal data.",
+    "Allergen and dietary information must be accurate; never rely on AI alone for allergen statements.",
+    "Replies to public reviews are public content; a person should approve sensitive ones."
+  ],
+  "follow_up_questions": [
+    "How many booking enquiries and reviews do you get per month?",
+    "Which booking channels and systems do you use?",
+    "Do enquiries come in several languages?",
+    "Is there a person available to approve replies before they are sent?"
+  ],
+  "weight_adjustments": { "volume_repetitiveness": 5, "error_risk_inverse": -5, "time_saved": 0 }
+}

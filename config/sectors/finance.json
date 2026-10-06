@@ -1,0 +1,27 @@
+{
+  "id": "finance",
+  "name": "Finance and accounting",
+  "description": "Banks, lenders, insurers, accountants and finance teams.",
+  "typical_workflows": [
+    { "name": "Invoice processing", "description": "Read invoices, extract amounts and vendors, match to purchase orders.", "likely_task_types": ["extraction", "classification"] },
+    { "name": "Expense categorization", "description": "Assign expenses to accounts and flag unusual ones.", "likely_task_types": ["classification"] },
+    { "name": "Customer onboarding / KYC review", "description": "Check identity documents and application forms.", "likely_task_types": ["extraction", "reasoning"] },
+    { "name": "Financial report commentary", "description": "Write management commentary on monthly numbers.", "likely_task_types": ["summarization", "drafting"] },
+    { "name": "Client queries", "description": "Answer questions about statements, fees and processes.", "likely_task_types": ["classification", "drafting"] }
+  ],
+  "common_tools": ["Excel", "QuickBooks", "Xero", "SAP", "Bank portals", "Email", "Document management systems"],
+  "sensitive_data_categories": ["financial", "personal"],
+  "compliance_notes": [
+    "Financial and identity data are sensitive; check data-protection and financial-regulator rules (for example GDPR, PCI DSS for card data, local anti-money-laundering rules).",
+    "Decisions that affect customers (credit, claims) may need to be explainable and reviewed by a person.",
+    "Keep an audit trail of what the AI produced and who approved it.",
+    "Exact calculations (totals, tax) should be done by spreadsheets or software, not by an AI model."
+  ],
+  "follow_up_questions": [
+    "How many documents or transactions do you handle per month?",
+    "Are the documents scanned images, PDFs or structured files?",
+    "Is there a regulator or auditor that needs to see how decisions are made?",
+    "Does a person approve the output before money moves?"
+  ],
+  "weight_adjustments": { "error_risk_inverse": 10, "ease_of_implementation": -5, "volume_repetitiveness": -5 }
+}
