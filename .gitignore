@@ -1,0 +1,26 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# node / next
+node_modules/
+.next/
+out/
+coverage/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# benchmark outputs (reports are regenerated; raw results live in the DB)
+benchmark/output/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
