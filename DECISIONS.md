@@ -56,3 +56,34 @@ Format: **Decision** — context, options considered, why, trade-offs.
 - **Decision:** `create-next-app` and its dependencies are deferred to the start
   of Phase 2, after approval.
 - **Why:** Brief says to ask before adding dependencies.
+
+## D9. Phase 2 scaffold and server boundary
+- **Decision:** After the instruction to continue Phase 2, add the agreed Next.js,
+  React, TypeScript, Tailwind, zod and vitest dependencies. Use native server-side
+  fetch for OpenRouter rather than an additional provider SDK. Load root `.env`
+  through Next's environment loader; keep secrets out of client modules.
+- **Why:** Implements the approved stack with a small dependency surface.
+- **Trade-off:** The configured intake model must support JSON-schema output.
+  Provider failures are reported without exposing raw provider responses.
+
+## D10. Unknown facts must be reviewed, not invented
+- **Decision:** Extraction fields may be null for missing quantities, impact and
+  sensitivity. The user must supply these before confirmation. Keep original
+  extraction confidence and evidence separate from user edits. No scores or
+  prices are requested from the LLM.
+- **Why:** Missing volume is not zero; guessed input would distort later scoring.
+- **Trade-off:** The extraction schema is intentionally more permissive about
+  unknowns than the database's confirmed-task fields. Sensitivity uses the
+  existing single-category schema; users choose the most sensitive category.
+
+## D11. Phase 2 is a local, ephemeral draft flow
+- **Decision:** Support one workflow per draft, editable tasks, manual entry and
+  JSON download. Keep drafts in tab memory; defer database save/load and public
+  hosting. Do not add anonymous assessment read endpoints or public RLS policies.
+- **Why:** Provides a reviewable intake slice without exposing unauthenticated
+  business records. Supabase is not needed to try the intake screen.
+- **Trade-off:** Refresh loses the draft and JSON import is not implemented.
+  Before public deployment, add access protection and a shared request budget
+  for the paid extraction endpoint. Loopback binding is only a local default,
+  not authentication. Database integration must preserve confirmed task fields
+  and snapshot deterministic weights when scoring is implemented.
